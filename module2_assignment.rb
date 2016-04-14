@@ -32,23 +32,22 @@ class Solution
         @LineAnalyzers = []
         @Line_numbers = []
         @max_frequency=[] 
+        #@highest_count_across_lines = []
         counter = 1
         File.foreach('test.txt') do |line|
             @LineAnalyzers = line
             @analyzers.push(@LineAnalyzers)
             @Line_numbers.push(counter)
-            #cal_high_freq =  LineAnalyzer.new(@analyzers[0],1)
-            #@max_frequency = cal_high_freq.calculate_word_frequency
             counter=counter+1
         end 
+            
             
             @analyzers.each do |element|
                 cal_high_freq =  LineAnalyzer.new(element,1)
                 @max_frequency = cal_high_freq.calculate_word_frequency
                 p @max_frequency
+                
             end     
-            #cal_high_freq =  LineAnalyzer.new(@analyzers[0],1)
-            #@max_frequency = cal_high_freq.calculate_word_frequency
         p @analyzers, @Line_numbers, @max_frequency 
 
     end
@@ -56,8 +55,10 @@ class Solution
     def calculate_line_with_highest_frequency()
         highest_count_across_lines ＝ 0
         @highest_count_words_across_lines = []
+      
+            
         
-
+        
 
 
     end 
