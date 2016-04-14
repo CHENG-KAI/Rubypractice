@@ -41,9 +41,14 @@ class Solution
             #@max_frequency = cal_high_freq.calculate_word_frequency
             counter=counter+1
         end 
-
-            cal_high_freq =  LineAnalyzer.new(@analyzers[0],1)
-            @max_frequency = cal_high_freq.calculate_word_frequency
+            
+            @analyzers.each do |element|
+                cal_high_freq =  LineAnalyzer.new(element,1)
+                @max_frequency = cal_high_freq.calculate_word_frequency
+                p @max_frequency
+            end     
+            #cal_high_freq =  LineAnalyzer.new(@analyzers[0],1)
+            #@max_frequency = cal_high_freq.calculate_word_frequency
         p @analyzers, @Line_numbers, @max_frequency 
 
     end
@@ -87,8 +92,8 @@ File.foreach('test.txt') do |line|
 
 
 
-LineAnalyzer1 = LineAnalyzer.new("This is a really really really cool cool you you you",1)
-puts LineAnalyzer1.calculate_word_frequency
+#LineAnalyzer1 = LineAnalyzer.new("This is a really really really cool cool you you you",1)
+#puts LineAnalyzer1.calculate_word_frequency
 LineAnalyzer2 = Solution.new
 #puts LineAnalyzer2.calculate_line_with_highest_frequency
 LineAnalyzer2.analyze_file
